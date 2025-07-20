@@ -10,7 +10,7 @@ let object = {  // if you are going to view your object to frontend then specify
   name:"sanchit",
   age:21
 }
-
+ 
 const App = () => {
   return (
   <>
@@ -37,8 +37,7 @@ const App = () => {
     </h3>
     <h1>
       object: {object.name} || {object.age}
-    </h1>
-    
+     </h1>
   </>
   )
 }
