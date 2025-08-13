@@ -1,0 +1,4 @@
+// in this we are learning two way bindings :- here two way bindings are used only in form element only -
+1. when you make a form then first you give this data to react and react saves it in it's useState and then
+2. whatever is saved in react it is then displayed to form in such a way 
+so when these two steps are followed then it is called twe way binding or it also called controlled element.
