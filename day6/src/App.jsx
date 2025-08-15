@@ -1,20 +1,42 @@
 import { useState } from "react";
 const App = () => {
-  const [todos, settodos] = useState(" ");
+  const [todos, settodos] = useState([
+    {
+      id: 1,
+      title: "kam kar le ",
+      isCompleted: false,
+    },
+  ]);
+
+  const [title, settitle] = useState(" ");
+
+  const changeHandler = (e) => {
+    e.preventDefault();
+    console.log(e.target[0]);
+  };
   return (
     <>
       <h1>todos</h1>
-      <form>
+      <form onSubmit={changeHandler}>
         <input
-          onChange={(e) => settodos(e.target.value)}
-          value={todos}
+          onChange={(e) => settitle(e.target.value)}
           type="text"
-          placeholder="to do "
+          placeholder="title"
+          value={title}
         />
-        work
         <br />
         <br />
-        <input type="checkbox"  />
+        <input
+          onChange={(e) => console.log(e.target.checked)}
+          type="checkbox"
+        />
+        <br />
+        <br />
+        <input onChange={(e)=>console.log(e.target.value)} type="radio" value="male" /> male
+        <br />
+        <br />
+        <input onChange={(e)=>console.log(e.target.value)} type="radio" value="female" /> female
+        <br />
         <button>submit</button>
       </form>
     </>
