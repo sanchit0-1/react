@@ -1,45 +1,57 @@
+//todo list making:
 import { useState } from "react";
 const App = () => {
-  const [todos, settodos] = useState([
-    {
-      id: 1,
-      title: "kam kar le ",
-      isCompleted: false,
-    },
+  const [tods, settods] = useState([
+    { id: 1, title: "kaam kar lo sir", iscompleted: false },
   ]);
-
   const [title, settitle] = useState(" ");
+  const [completed, setcompleted] = useState(false);
+  const [gender, setgender] = useState("male");
+  const [city, setcity] = useState("mumbai")
 
-  const changeHandler = (e) => {
-    e.preventDefault();
-    console.log(e.target[0]);
-  };
   return (
-    <>
-      <h1>todos</h1>
-      <form onSubmit={changeHandler}>
+    <div>
+      <h1>create tasks</h1>
+      <form action="">
         <input
           onChange={(e) => settitle(e.target.value)}
+          value={title}
           type="text"
           placeholder="title"
-          value={title}
         />
+        <br />
+        <input
+          checked = {completed}
+          onChange={(e) => setcompleted(e.target.checked)}
+          type="checkbox"
+        />{" "}
+        Completed
         <br />
         <br />
         <input
-          onChange={(e) => console.log(e.target.checked)}
-          type="checkbox"
-        />
-        <br />
-        <br />
-        <input onChange={(e)=>console.log(e.target.value)} type="radio" value="male" /> male
-        <br />
-        <br />
-        <input onChange={(e)=>console.log(e.target.value)} type="radio" value="female" /> female
-        <br />
-        <button>submit</button>
+          checked = {gender == "male" && true}
+          onChange={(e) => setgender(e.target.value)}
+          type="radio"
+          value="male"
+        />{" "}
+        Male
+        <input
+          checked = {gender == "female" && true}
+          onChange={(e) => setgender(e.target.value)}
+          type="radio"
+          value="female"
+        />{" "}
+        Female
+        <br /> <br />
+        <select onChange={(e)=>setcity(e.target.value)} value={city} >
+          <option value="mumbai">mumbai</option>
+          <option value="jaipur">jaipur</option>
+          <option value="delhi">delhi</option>
+        </select> Select
+        <br /> <br />
+        <button>Create todo</button>
       </form>
-    </>
+    </div>
   );
 };
 
