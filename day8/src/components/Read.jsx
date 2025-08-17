@@ -9,7 +9,7 @@ const Read = (props) => {
   }
   const tods = props.tods
     const renderUser = tods.map((todo) =>{
-    return <li key={todo.id}>{todo.title}|<span onClick={() => deleteHandler(todo.id)}>Delete</span></li>
+    return <li key={todo.id}>{todo.title} |<span onClick={() => deleteHandler(todo.id)}>Delete</span></li>
   })
   
   return (
